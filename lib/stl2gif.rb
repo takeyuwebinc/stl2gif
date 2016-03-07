@@ -61,6 +61,24 @@ module Stl2gif
       end
     end
 
+    def to_png(basename)
+      begin
+        rotation = Math::PI * 2 / options[:step]
+        png_file = Tempfile.create 'pov' do |pov|
+          pov.write(Mustache.render(template, modelData: to_pov, phi: rotation))
+          pov.flush
+
+          frame = Tempfile.new ['frame', '.png']
+
+          system("povray -i#{pov.path} +FN +W#{options[:width]} "+
+            "+H#{options[:height]} -o#{frame.path} +Q9 +AM1 +A +UA")
+          frame
+        end
+      ensure
+      end
+      png_file
+    end
+
     def to_gif(basename)
       begin
         animation = Magick::ImageList.new *frames.map(&:path)

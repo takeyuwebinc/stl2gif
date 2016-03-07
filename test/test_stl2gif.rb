@@ -23,5 +23,11 @@ describe Stl2gif do
 
       File.exists?(gif_file.path).must_equal true
     end
+
+    it 'converts to png' do
+      png_file = subject.to_png 'test'
+
+      File.exists?(png_file.path).must_equal true
+    end
   end
 end
