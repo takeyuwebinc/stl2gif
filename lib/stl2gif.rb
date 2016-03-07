@@ -56,7 +56,7 @@ module Stl2gif
     end
 
     def generate_frames
-      for i in 0..options[:step]*2
+      for i in 0..options[:step]*2-1
         render_frame Math::PI * i / options[:step]
       end
     end
