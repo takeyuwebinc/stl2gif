@@ -5,7 +5,7 @@ require 'stl2gif/version'
 
 Gem::Specification.new do |spec|
   spec.name          = 'stl2gif'
-  spec.version       = '0.0.1'
+  spec.version       = Stl2gif::VERSION
   spec.authors       = ['La Inventoria']
   spec.email         = ['stl2gif@lainventoria.com.ar']
   spec.summary       = %q{Convert STL files to GIF animations.}
