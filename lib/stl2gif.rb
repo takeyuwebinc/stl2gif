@@ -1,6 +1,6 @@
 require 'stl'
 require 'mustache'
-require 'RMagick'
+require 'rmagick'
 require 'stl2gif/version'
 require 'stl2gif/point'
 require 'stl2gif/triangle'
